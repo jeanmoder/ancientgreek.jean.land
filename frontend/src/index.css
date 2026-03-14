@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-greek: 'Brill', 'Gentium Plus', 'Noto Serif', serif;
+  --font-sans: 'Helvetica Neue', 'Helvetica', -apple-system, sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Menlo', monospace;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+}
+
+/* Greek-facing fields prefer Brill if the user has added it locally. */
+input[type="text"],
+input[type="search"],
+textarea {
+  font-family: 'Brill', 'Gentium Plus', 'Noto Serif', serif;
+}
+
+input[type="text"]::placeholder,
+input[type="search"]::placeholder,
+textarea::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
+
+.dark input[type="text"]::placeholder,
+.dark input[type="search"]::placeholder,
+.dark textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+/* LSJ full entry styles */
+.lsj-entry {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.logeion-entry {
+  font-family: 'Brill', 'Gentium Plus', 'Noto Serif', serif;
+}
+
+.brand-rounded {
+  font-family: 'SF Pro Rounded', 'Avenir Next Rounded', 'Nunito', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+
+.lsj-entry .lsj-orth {
+  font-family: 'Brill', 'Gentium Plus', serif;
+  font-weight: 700;
+}
+
+.lsj-entry .lsj-foreign {
+  font-family: 'Brill', 'Gentium Plus', serif;
+  font-style: italic;
+}
+
+.lsj-entry .lsj-tr {
+  font-style: italic;
+}
+
+.lsj-entry .lsj-bibl {
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.lsj-entry .lsj-author {
+  font-variant: small-caps;
+}
+
+.lsj-entry .lsj-sense {
+  display: block;
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+.lsj-entry .lsj-sense[data-level="1"] {
+  padding-left: 0;
+  font-weight: 600;
+}
+
+.lsj-entry blockquote {
+  display: inline;
+  font-family: 'Brill', 'Gentium Plus', serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dark .lsj-entry {
+  color: #8baad9;
+}
+
+.dark .lsj-entry .lsj-bibl {
+  color: #586173;
+}

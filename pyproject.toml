@@ -1,0 +1,35 @@
+[project]
+name = "ancientgreek"
+version = "0.1.0"
+description = "Ancient Greek learning website"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "httpx",
+    "pydantic-settings",
+    "aiosqlite",
+    "python-dotenv",
+    "lxml",
+    "spacy<3.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "anyio[trio]",
+    "httpx",
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

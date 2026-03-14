@@ -1,0 +1,25 @@
+*.pyc
+__pycache__/
+.venv/
+node_modules/
+dist/
+.env
+*.egg-info/
+.ruff_cache/
+.mypy_cache/
+*.db
+*.sqlite
+.idea/
+scripts/
+frontend/public/fonts/*.ttf
+frontend/public/fonts/*.otf
+frontend/public/fonts/*.woff
+frontend/public/fonts/*.woff2
+frontend/public/fonts/*.pdf
+
+# Large local dictionary assets/db (kept off Git)
+backend/data/dictionaries/
+backend/data/logeion/
+backend/data/lsj-shortdefs.json
+
+
